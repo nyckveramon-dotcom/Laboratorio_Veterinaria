@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Gato extends Animal implements Vacunable{
 
     private boolean esEsterilizado;
@@ -11,13 +13,18 @@ public class Gato extends Animal implements Vacunable{
         return 38000;
     }
 
+    private final ArrayList<String> vacunas = new ArrayList<>();
+
     @Override
     public void registrarVacuna(String nombre) {
-
+        vacunas.add(nombre);
     }
 
     @Override
     public int getVacunasAplicadas() {
-        return 0;
+        return vacunas.size();
     }
+
+
+
 }
