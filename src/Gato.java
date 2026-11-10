@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Gato extends Animal implements Vacunable{
+public class Gato extends Animal implements Vacunable, Asegurable{
 
     private boolean esEsterilizado;
     public Gato(String nombreMascota, int edad, String nombreDueño, boolean esEsterilizado) {
@@ -26,5 +26,16 @@ public class Gato extends Animal implements Vacunable{
     }
 
 
+    @Override
+    public double calcularPrimaSeguro() {
+        if(!esEsterilizado){
+            return 200000;
+        };
+        return 120000;
+    }
 
+    @Override
+    public String obtenerNumeroPoliza() {
+        return "Gato-" + getNombreMascota();
+    }
 }
